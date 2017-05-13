@@ -3,7 +3,7 @@ title: Rouslan Zenetl
 
 # install jekyll-tidy by running
 # $ sudo gem install jekyll-tidy
-gems: [jekyll-tidy]
+gems: [jekyll-tidy,jekyll-gist,pygments]
 
 # config for jekyll-tidy
 jekyll_tidy:
