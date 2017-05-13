@@ -1,0 +1,26 @@
+---
+# basic layout
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{% if page.title %} {{ page.title }} by {% endif %} {{ site.title }}</title>
+		<meta name="description" content="rzen's blog." />
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis:400,700%7CBitter:400,400italic,700&amp;subset=latin,latin" media="all">
+	</head>
+	
+	<body>
+		<header>
+			<h1><a href="/">Rouslan Zenetl</a></h1>			
+		</header>
+
+		{{ content }}
+		
+		<footer>
+			<p>&copy; 1996&mdash;{{ 'now' | date: '%Y' }} Rouslan Zenetl. <a href="/legal/">Legal</a>.</p>
+		</footer>
+	</body>
+</html>

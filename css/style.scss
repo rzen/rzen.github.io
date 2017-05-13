@@ -1,0 +1,97 @@
+---
+# scss
+---
+
+// base
+$content-width: 700px;
+$margin-width: 250px;
+$hue: 30;  // isabelline hue is 30
+
+// derivatives
+$color: hsl($hue,20,20);        // text
+$bg-color: hsl($hue,26.7,94.1);  // background
+$h-color: hsl($hue,50,25);     // headers
+
+
+body {
+	color: $color;
+	background-color: $bg-color;
+	width: $content-width + 2 * $margin-width;
+	margin: 0 auto 0 0;
+	padding: 0;
+	font-family: bitter, georgia, serif;
+	font-size: 1.2em;
+}
+
+section.index {
+	padding-top: 1em;
+	h1 {
+		float: left;
+		width: 5em;
+		text-align: right;
+		margin: 0 0 0 -6em;
+		padding: 5px 0 0 0;
+		color: hsl($hue,10,80);
+		clear: both;
+		font-size: 1em;
+		font-weight: normal;
+	}
+	a {
+		font-size: 1em;
+	}
+	li {
+		padding: 5px 0 .3em 0;
+		list-style-type: none;
+	}
+}
+
+a, a:hover, a:active, a:visited { color: hsl($hue,30,30); }
+
+br.clear {
+	clear: both;
+}
+
+header, footer, article {
+	width: $content-width;
+	margin: 0 auto 0 $margin-width;
+	vertical-align: middle;
+	
+}
+
+header, footer {
+	display: inline-block;
+
+	&, a, a:hover, a:active, a:visited {
+		text-decoration: none;
+		color: hsl($hue,10,50);
+	}
+}
+
+header {
+	border-bottom: 1px solid hsl($hue,30,70);
+	h1 {
+		float: left;
+		width: 50%;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+article {
+	aside {
+		font-size: .9rem;
+		width: 150px;
+		float: left;
+		margin-left: -170px;
+		text-align: right;
+
+		&.right {
+			float: right;
+			text-align: left;
+			width: 200px;
+			margin-right: -220px;
+		}
+	}
+
+}
+
