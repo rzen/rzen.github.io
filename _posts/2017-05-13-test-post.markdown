@@ -1,6 +1,7 @@
 ---
 title: Test Post
 layout: post
+description: This is a test post descriptoin
 ---
 
 # Test Post
