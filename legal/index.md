@@ -4,8 +4,6 @@ title: Legal
 tags: about legal
 ---
 
-# Opinions are my own
-
 # The MIT License (MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
