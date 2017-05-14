@@ -3,7 +3,14 @@ title: Rouslan Zenetl
 
 # install jekyll-tidy by running
 # $ sudo gem install jekyll-tidy
-gems: [jekyll-tidy,rouge]
+gems:
+  - rouge
+  - jekyll-tidy
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag  # https://github.com/jekyll/jekyll-seo-tag
+  - jekyll-avatar
 
 kramdown:
   auto_ids: false
