@@ -3,10 +3,19 @@ title: Rouslan Zenetl
 
 # install jekyll-tidy by running
 # $ sudo gem install jekyll-tidy
-gems: [jekyll-tidy,jekyll-gist,pygments]
+gems: [jekyll-tidy,rouge]
 
-# config for jekyll-tidy
+kramdown:
+  auto_ids: false
+  syntax_highlighter_opts:
+    block:
+      default_lang: javascript
+      line_numbers: true
+    span:
+      line_numbers: false
+
 jekyll_tidy:
-  # exclude: ["index.html"]
   compress_html: false
-  # ignore_env: development
+
+sass:
+  sass_dir: _sass
