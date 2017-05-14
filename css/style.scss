@@ -12,6 +12,11 @@ $color: hsl($hue,20,20);        // text
 $bg-color: hsl($hue,26.7,94.1);  // background
 $h-color: hsl($hue,50,25);     // headers
 
+@import "_mixins";
+
+@function complement($color,$offset: 90){
+  @return ($color+$offset)%180
+}
 
 body {
 	color: $color;
@@ -94,3 +99,34 @@ article {
 	}
 }
 
+div.highlight {
+	border: 1px solid hsl($hue,30,70);
+	background-color: hsl(complement($hue),50,95);
+	@include border-radius(.2em);
+
+	td.gutter {
+		margin: 0;
+		pre {
+			padding: .5em;
+		}
+	}
+
+	.code {
+		padding-left: .5em;
+		pre {
+			tab-size: 2;
+			-moz-tab-size: 2;
+		    -o-tab-size: 2;
+		}
+	}
+
+	pre {
+		margin: 0;
+	}
+
+	pre.lineno {
+		color: hsl($hue,30,70);
+		border-right: 1px solid hsl($hue,30,70);
+		word-wrap: normal;
+	}
+}
