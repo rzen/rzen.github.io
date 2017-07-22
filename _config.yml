@@ -1,8 +1,22 @@
 # your name
 title: Rouslan Zenetl
+subtitle: Software Engineer
+# logo: \3245 # kindergarden
+logo: \3246 # school
+# logo: \2105 # care of
+# logo: \2140 # sum
+# logo: \2A33 # smash product
+author: Rouslan Zenetl
+email: rzenetl at gmail dot com
+description: "Musings on various things."
+baseurl: ""
+url: "https://rouslan.zenetl.com"
 
-# install jekyll-tidy by running
-# $ sudo gem install jekyll-tidy
+# paginate: 9
+# paginate_path: "/page/:num/"
+
+googleAnalyticsId: TBD
+
 gems:
   - rouge
   - jekyll-tidy
@@ -26,3 +40,4 @@ jekyll_tidy:
 
 sass:
   sass_dir: _sass
+  # style: compressed

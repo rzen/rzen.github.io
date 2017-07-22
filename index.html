@@ -1,17 +1,26 @@
 ---
 layout: base
-title: Blog
+title: Home
 ---
 
-<article>
-	<section class="index">
-		{% for post in site.posts %}
-			{% assign currentdate = post.date | date: "%Y" %}
-			{% if currentdate != date %}
-				<h1>{{ currentdate }}</h1>
-				{% assign date = currentdate %} 
-			{% endif %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-	</section>
-</article>
+{% assign post_count = 0 %}
+{% assign show_archive = 0 %}
+
+{% for post in site.posts %}
+	{%if post.tags contains "index" %}
+		{% assign post_count = post_count + 1 %}
+
+		{% if post_count < 5 %}
+			<article>
+				{% include post_header.html post=post %}
+				{% include post_content.html post=post %}
+			</article>
+		{% else %}
+			{% assign show_archive = show_archive + 1 %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+{%if show_archive > 0 %}
+	<a href="/archive/">Archive</a>
+{% endif %}

@@ -1,3 +1,7 @@
+@function complement($color,$offset: 180) {
+  @return ($color+$offset)%360
+}
+
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow:inset $top $left $blur $color;
@@ -11,7 +15,7 @@
 }
  
 @mixin text-field {
- display: inline-block;
+  display: inline-block;
   outline: none;
   text-decoration: none;
   font: 14px/100% Arial, Helvetica, sans-serif;

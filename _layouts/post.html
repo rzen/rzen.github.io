@@ -1,9 +1,7 @@
 ---
-# post layout
 layout: base
 ---
 <article>
-	<section>
-		{{ content }}
-	</section>
+	{% include post_header.html post=page %}
+	{% include post_content.html post=page %}
 </article>
