@@ -15,7 +15,10 @@ baseurl: ""
 url: "https://rouslan.zenetl.com"
 
 # used in footer
-copyright_owner: Rouslan Zenetl
+copyright_owner:
+  full_name: Rouslan Zenetl
+  short_name: rzen
+  email: rzenetl@gmail.com
 
 # default author's name
 author:
@@ -24,8 +27,11 @@ author:
   email: rzenetl at gmail dot com
 
 collections:
-  posts:
+  blog:
     permalink: /blog/:title/
+    output: true
+  posts:
+    permalink: /post/:title/
     output: true
   pages:
     permalink: /:title/

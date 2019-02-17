@@ -18,10 +18,6 @@ Its a color frequently seen in nature:
 <div class="slideshow fade">
 	{% include image.html name="Quarter_Horse(REFON).jpeg" caption="Light palomino Quarter Horse, which may be described as isabelline." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
 	{% include image.html name="Lanius_isabellinus1.jpeg" caption="Isabelline shrike." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
-	{% include image.html name="Quarter_Horse(REFON).jpeg" caption="Light palomino Quarter Horse, which may be described as isabelline." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
-	{% include image.html name="Lanius_isabellinus1.jpeg" caption="Isabelline shrike." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
-	{% include image.html name="Quarter_Horse(REFON).jpeg" caption="Light palomino Quarter Horse, which may be described as isabelline." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
-	{% include image.html name="Lanius_isabellinus1.jpeg" caption="Isabelline shrike." source="https://en.wikipedia.org/wiki/Isabelline_(colour)" %}
 </div>
 
 I personally find it pleasing to the eye, not at all 
