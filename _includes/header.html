@@ -2,8 +2,10 @@
 	<nav>
 		<ul>
 			<li><a href="{{ site.baseurl | append: '/' }}">Home</a>
-			{% for post in site.categories.global | sort: 'sort_order', 'title' %}
-				<li><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+			{% for page in site.pages | sort: 'sort_order', 'title' %}
+				{% if page.categories contains 'global' %}
+					<li><a href="{{ site.baseurl | append: page.url }}">{{ page.title }}</a>
+				{% endif %}
 			{% endfor %}
 		</ul>
 	</nav>
