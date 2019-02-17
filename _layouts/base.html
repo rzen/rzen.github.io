@@ -1,43 +1,14 @@
----
-# basic layout
----
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>{% if page.title %} {{ page.title }} by {% endif %} {{ site.author }}</title>
-		{% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/css/style.css">
-		<link rel="stylesheet" href="/css/syntax.css">
-		<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis:400,700%7CBitter:400,400italic,700&amp;subset=latin,latin" media="all"> -->
-		{% seo %}
-	</head>
-	
+<html lang="{{page.lang | default:"en"}}">
+	{% include head.html %}
 	<body>
-		<header>
-			<nav>
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/blog/">Blog</a></li>
-					<li><a href="/archive/">Archive</a></li>
-					<li><a href="/about/">About</a></li>
-				</ul>
-				<hgroup>
-					<h1>{{ site.title }}</h1>
-					<h2>{{ site.subtitle }}</h2>
-				</hgroup>
-			</nav>
-		</header>
-
-		<main>
-			{{ content | replace: '<!--qed-->', ' &#8718;'}}
-		</main>
-
-		<footer>
-			<nav>
-				<p>&copy; 1996&mdash;{{ 'now' | date: '%Y' }} Rouslan Zenetl. <a href="/legal/">Legal</a>.</p>
-			</nav>
-		</footer>
+		{% include header.html %}
+		{{ content 
+			| replace: '<!--qed-->', ' <span class=qed>&#8718;</span>'
+			| replace: '\=\>', '&#8658;'
+		}}
+		{% include footer.html %}
+		<!-- Page generated {{ site.time }} -->
+		<!-- Page ID {{ page.id }} -->
 	</body>
 </html>

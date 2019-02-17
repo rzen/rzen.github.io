@@ -1,0 +1,383 @@
+// print media exceptions
+@media print {
+	.mode, header nav, footer a.edit {
+		display: none;
+	}
+
+	main article aside {
+		margin-right: 0 !important;
+	}
+}
+
+// placeholder for responsive mode indication
+footer nav .mode {
+	font-size: 70%;
+	text-transform: uppercase;
+	color: lighten($footer-color, 50%);
+	&:before { content: '~'; }
+}
+
+// desktop
+@media all and (min-width: 801px) {
+	.mode:before {
+		content: 'Desktop' !important;
+	}
+}
+
+// tablet & mobile
+@media all and (max-width: 800px) {
+	body {
+		text-align: left !important;
+	}
+
+	main, header, footer {
+		width: 90% !important;
+		min-width: 300px !important;
+		margin: 0;
+	}
+
+	main article blockquote {
+		&:before {
+		    content: '' !important;
+	   	}
+	}
+
+	main ul.index li.year {
+		float: none !important;
+		text-align: left !important;
+		margin: .5em 0 0 0 !important;
+	}
+
+	main article aside {
+		margin-right: 0 !important;
+	}
+
+	// for tablet & mobile move year to top of ul of posts
+	main {
+		h2.year {
+			// clear: both;
+			float: none !important;
+			// width: 4.5em;
+			margin: 0 !important;
+			text-align: left !important;
+			font-size: 1.5em !important;
+			color: $main-heading-color !important;
+		}
+
+		ul.index {
+			margin-top: 0 !important;
+		}
+	}
+
+	.mode:before {
+		content: 'Tablet' !important;
+	}
+}
+
+// mobile
+@media all and (max-width: 500px) {
+	body {
+		text-align: left !important;
+	}
+
+	main, header, footer {
+		// font-size: 200%;
+		width: 95% !important;
+		min-width: 100px !important;
+		margin: 0;
+	}
+
+	.mode:before {
+		content: 'Mobile' !important;
+	}
+
+	main article aside {
+		margin-right: 0 !important;
+	}
+
+	footer nav p span.copy {
+		position: relative;
+		margin-left: 0;
+	}
+
+}
+
+::selection {
+	color: $selection-color;
+	background-color: $selection-background-color;
+}
+
+// size the width for comfortable reading
+main, header, footer {
+	width: 70%;
+	max-width: 700px;
+	margin: 0 auto;
+	clear: both;
+}
+
+body {
+	font-family: $serif;
+	font-size: 1.3em;
+	color: $body-color;
+	background-color: $body-background-color;
+}
+
+header {
+	nav {
+		color: $header-color;
+		font-family: $header-serif;
+		margin: .5em 0;
+		float: right;
+		
+		// site menu shows posts in "global" category
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				color: $header-link-color;
+				list-style: none;
+				padding-left: .5rem;
+				display: inline-block;
+				
+				&:before { content: '\2022'; padding-right: .5rem; }
+				&:first-child:before { content: ''; padding-right: 0; }
+
+				a {
+					&, &:hover, &:active, &:visited {
+						text-decoration: none;
+						color: darken($header-link-color,20%);
+					}
+				}
+			}
+		}
+	}
+}
+
+// div.column {
+// 	width: 30%;
+// 	float: left;
+// 	padding: .5rem;
+// 	margin: .5rem;
+// 	border: 1px solid #ccc;
+// }
+
+// link styling
+a {
+	color: darken($link-color,15%);
+	&:hover, &:active, &:visited {
+		color: $link-color;
+	}
+}
+
+// main area of the page
+main {
+	p {
+		margin: 1em 0;
+		line-height: 1.2em; 
+	
+		code {
+			// TODO: need better styling
+			font-size: .9em;
+			background-color: white;
+			border: solid 1px #ccc;
+			border-radius: 3px;
+			padding: 0 .2em;
+		}
+	}
+
+	// figure is a composition of the image and caption
+	figure {
+		margin: 1em 0;
+		figcaption {
+			font-size: .8em;
+			text-align: center;
+			padding: .5rem;
+		}
+
+		img {
+			border-radius: 4px;
+			width: 100%;
+		}
+	}
+
+	// for slideshows show the first figure, hide rest
+	div.slideshow figure {
+		display: none;
+		&:first-child {
+			display: block;
+		}
+	}
+
+	// drop caps
+	// TODO: this needs work
+	@if $drop-caps {
+		h1, h2, h3, h4, h5 {
+			+ p:first-letter {
+				color: $main-dropcaps-color;
+				float: left;
+				font-family: $header-serif;
+				font-size: $main-dropcaps-font-size;
+				line-height: 60px;
+				padding-top: 4px;
+				padding-right: 8px;
+				padding-left: 3px;
+			}
+		}
+	}
+
+	h1,h2,h3,h4,h5 {
+		margin: 1em 0 .5em 0;
+		color: $main-heading-color;
+		font-family: $header-serif;
+		text-align: left;
+	}
+
+	// h4 should sit right on top of the paragraph
+	h4 {
+		margin-bottom: 0;
+		color: $body-color;
+	}
+	h4 + p { margin-top: .2em }  // .2em to match line height spacing
+
+	// ul.posts {
+	// 	padding-left: 0;
+	// 	li {
+	// 		list-style: none;
+	// 		padding-left: 0;
+	// 		margin-left: 0;
+	// 		margin-top: .5rem;
+	// 		margin-bottom: .5rem;
+	// 	}
+	// }
+
+	// styling for the main article
+	article {
+
+		// styling for in-article unordered lists
+		ul {
+			padding-left: 0;
+			li {
+				list-style: none;
+				padding-left: 1em;
+				padding-bottom: .2em;
+				margin-left: 0;
+				&:before {
+					content: "\2014";
+					margin-left: -1em;
+					margin-right: .2em;
+				}
+			}
+		}
+		
+		// TODO: probably needs work
+		blockquote {
+			clear: both;
+			margin: .5rem 0;
+			padding: 0;
+			margin-left: 2em;
+			position: relative;
+			font-size: 1.2em;
+			font-style: italic;
+			
+			color: $main-blockquote-color;
+
+			&:before {
+			    content: '\201c';
+			    position: absolute;
+			    top: -.15em;
+			    left: -.7em;
+			    font-size: 4em;
+			    color: $main-blockquote-before-color;
+		   	}
+
+		   	:first-child { margin-top: 0; }
+		   	:last-child { margin-bottom: 0; }
+		}
+
+		// inset side note
+		aside {
+			clear: both;
+			float: right;
+			margin: 0 -20% 0 1rem;
+			padding: 0.5em 1rem;
+			position: relative;
+			font-size: .9em;
+			text-align: left;
+			width: 40%;
+			color: $main-aside-color;
+			border-left: 1px solid $main-aside-color;
+		}
+
+		// styling for the QED brick
+		.qed { color: #ccc; }
+	}
+
+	// styling for years in the index timeline of posts
+	// TODO: hoist color to _config.sass
+	// TODO: shold better scope selector
+	h2.year {
+		clear: both;
+		color: hsl($hue,10,80);
+		float: left;
+		width: 4.5em;
+		margin: -.2em 0 0 -5em;
+		padding: 5px 0 0 0;
+		font-family: $header-serif;
+		font-size: 2em;
+		font-weight: normal;
+		text-align: right;
+	}
+
+	// styling for index of posts
+	ul.index {
+		padding-left: 0;
+
+		li {
+			padding: .5em 0 .3em 0;
+			list-style-type: none;
+			color: $main-index-color;
+			
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			// space posted date off post title
+			span.posted {
+				font-size: .8em;
+				margin-left: 1.2em;
+				&:before {
+					content: "\2014";
+					margin-left: -1em;
+					margin-right: .2em;
+				}
+			}
+		}
+	}
+}
+
+// site footer
+footer {
+	color: $footer-color;
+	font-size: 80%;
+	margin-top: 2em;
+	font-family: $footer-serif;
+	&, a, a:active, a:hover, a:visited { color: $footer-link-color }
+
+	// dont underline links in the footer
+	nav a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// hang copyright symbol
+	span.copy {
+		position: absolute;
+		margin-left: -1.2rem;
+	}
+
+}

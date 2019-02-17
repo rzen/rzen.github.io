@@ -1,0 +1,54 @@
+
+<footer>
+   <nav>
+      <p>
+         <span class="copy">&copy;</span> {{ 'now' | date: '%Y' }} {{ site.copyright_owner }}. 
+         <a href="/legal/">MIT License</a>. 
+         <a class="edit" href="{{ site.edit_url | append: page.path }}">Edit</a>.
+      </p>
+   </nav>
+   <nav>
+      <p class="mode"></p>
+      <p>{{ page.id }}</p>
+   </nav>
+   <!-- <style>
+      @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+   </style> -->
+</footer>
+
+<div id="snackbar">Loading...</div>
+
+<!-- <script src='/assets/js/slides.js'></script> -->
+<script src='/assets/js/clipboard.js'></script>
+
+<!--
+   {% if page.date %}
+      <p>
+         <span class="published-date">
+            {{ page.date | date: '%A, %B' }}
+            {% assign day = page.date | date: "%-d"  %}
+            {% case day %}
+               {% when '1' or '21' or '31' %}{{ day }}st
+               {% when '2' or '22' %}{{ day }}nd
+               {% when '3' or '23' %}{{ day }}rd
+               {% else %}{{ day }}th
+            {% endcase %}
+            {{ page.date | date: ", %Y" }}.
+         </span>
+      </p>
+   {% endif %}
+   <p>
+      Generated 
+      <span class="rendered-date">
+         {{ site.time | date: '%A, %B' }}
+         {% assign day = site.time | date: "%-d"  %}
+         {% case day %}
+            {% when '1' or '21' or '31' %}{{ day }}st
+            {% when '2' or '22' %}{{ day }}nd
+            {% when '3' or '23' %}{{ day }}rd
+            {% else %}{{ day }}th
+         {% endcase %}
+         {{ site.time | date: ", %Y" }}.
+      </span>
+   </p>
+-->

@@ -1,0 +1,80 @@
+# title of this site
+title: Rouslan Zenetl
+
+# subtitle
+# TODO: 
+subtitle: Software Engineer
+
+# site description
+description: "Musings on various things."
+
+# used on the home page's title tag
+tagline: Software Engineer
+
+baseurl: ""
+url: "https://rouslan.zenetl.com"
+
+# used in footer
+copyright_owner: Rouslan Zenetl
+
+# default author's name
+author:
+  short_name: rzen
+  full_name: Rouslan Zenetl
+  email: rzenetl at gmail dot com
+
+collections:
+  posts:
+    permalink: /blog/:title/
+    output: true
+  pages:
+    permalink: /:title/
+    output: true
+
+plugins:
+  - rouge
+  - jekyll-tidy
+  - jekyll/tagging
+  - jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag  # https://github.com/jekyll/jekyll-seo-tag
+
+# tag_page_layout: tag_page
+# tag_page_dir: tag
+
+# tag_page: /tags/
+# category_page: /categories/
+# tag_permalink_style: pretty
+
+tag_page_layout: tags
+tag_page_dir: tags
+
+kramdown:
+  auto_ids: false
+  syntax_highlighter_opts:
+    block:
+      default_lang: javascript
+      line_numbers: true
+    span:
+      line_numbers: false
+
+jekyll_tidy:
+  compress_html: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+include: ["_pages"]
+
+# dont move the following to _site/
+exclude: ["docker-compose.yaml", "docker", "Gemfile.lock", "Gemfile"]
+
+tz: America/New York
+
+# used for edit link in the footer
+edit_url: https://github.com/rzen/temp-blog/edit/master/
+
+google_analytics_token: 'UA-00000000-1' # leave blank if you don't want google analytics
+disqus_short_name: 'your_short_name' # leave blank if you don't want disqus

@@ -1,0 +1,10 @@
+<header>
+	<nav>
+		<ul>
+			<li><a href="{{ site.baseurl | append: '/' }}">Home</a>
+			{% for post in site.categories.global | sort: 'sort_order', 'title' %}
+				<li><a href="{{ site.baseurl | append: post.url }}">{{ post.title }}</a>
+			{% endfor %}
+		</ul>
+	</nav>
+</header>

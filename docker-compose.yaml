@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  jekyll-serve:
+    container_name: jekyll
+    image: jekyll/jekyll
+    command: jekyll serve --future --draft --force_polling --livereload
+    ports:
+      - 4000:4000
+      - 35729:35729
+    volumes:
+      - .:/srv/jekyll
